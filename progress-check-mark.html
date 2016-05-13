@@ -1,0 +1,144 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="progress-check-mark-styles.html">
+
+<!--
+An element providing an animated progress with a green check box on success
+
+Example:
+
+    <progress-check-mark></progress-check-mark>
+
+@demo
+-->
+
+<dom-module id="progress-check-mark">
+  <style include="progress-check-mark-styles"></style>
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+    }
+    .input-container {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-container > div {
+      display: flex;
+      flex-direction: row;
+    }
+    .cc-form-container {
+      width: 350px;
+    }
+  </style>
+  
+  <template>
+    <div hidden$="{{_isStopped(status)}}" class="checkmark">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px"
+          viewBox="0, 0, 100, 100" id="checkmark">
+          <g transform="">
+            <circle class$="path {{_pathClass(status)}}" fill="none" stroke="#7DB0D5" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="44"/>
+              <circle class$="fill {{_fillClass(status)}}" fill="none" stroke="#7DB0D5" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="44"/>
+            <polyline class$="check {{_checkClass(status)}}" fill="none" stroke="#7DB0D5" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" 
+                  points="70,35 45,65 30,52  "/>
+          </g>
+      </svg>
+    </div>
+  </template>
+  
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'progress-check-mark',
+
+    properties: {
+      
+      debug: {
+        type: Boolean,
+        value: false,
+        notify: true
+      },
+      
+      status: {
+        type: String,
+        value: 'stopped',
+        notify: true
+      }
+      
+    },
+    _debug: function(msg) {
+      if (!!this.debug) { console.log(msg); }
+    },
+    _isStopped: function(status) {
+      return this.status === 'stopped';
+    },
+    _checkClass: function(status) {
+      switch (status) {
+        case 'stopped':
+          return '';
+        case 'complete':
+          return 'check-complete';
+        case 'success':
+          return 'check-complete success';
+        default:
+          return '';
+      }
+    },
+    _fillClass: function(status) {
+      switch (status) {
+        case 'stopped':
+          return '';
+        case 'complete':
+          return 'fill-complete';
+        case 'success':
+          return 'fill-complete success';
+        default:
+          return '';
+      }
+    },
+    _pathClass: function(status) {
+      switch (status) {
+        case 'stopped':
+          return '';
+        case 'success':
+          return 'path-complete';
+        default:
+          return '';
+      }
+    },
+    _statusChanged: function(status) {
+      this._debug(`Status changed: ${status}`);
+      that = this;
+      if (status === 'complete') {
+        setTimeout(function() {
+          that.status = 'success';
+        },1000);
+      }
+    },
+    observers: [
+      '_statusChanged(status)'
+    ],
+    ready: function() {
+      this._debug('progress-check-mark ready');
+    },
+    attached: function() {
+      this._debug('progress-check-mark attached');
+    },
+    detached: function() {
+      this._debug('cc-form detached');
+    },
+
+  });
+
+</script>
