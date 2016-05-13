@@ -1,0 +1,47 @@
+{
+  "name": "progress-check-mark",
+  "authors": [
+    "Keith Hill <keith@dexs.ca>"
+  ],
+  "description": "An animated progress with a check box",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed",
+    "progress-check-mark"
+  ],
+  "main": "progress-check-mark.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://vic10us.github.io/progress-check-mark/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.0",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0",
+    "iron-validator-behavior": "PolymerElements/iron-validator-behavior#^1.0.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.0",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "web-component-tester": "*"
+  },
+  "_release": "de6b4b724d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "de6b4b724d8f6296db054aa2a37ba9a4f18a3917"
+  },
+  "_source": "git@github.com:vic10us/progress-check-mark.git",
+  "_target": "master",
+  "_originalSource": "git@github.com:vic10us/progress-check-mark",
+  "_direct": true
+}
