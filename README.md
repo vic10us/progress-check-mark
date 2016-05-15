@@ -1,9 +1,9 @@
-[![Join the chat at https://gitter.im/vic10us/progress-check-mark](https://badges.gitter.im/vic10us/cc-form.svg)](https://gitter.im/vic10us/progress-check-mark?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+[![Join the chat at https://gitter.im/vic10us/progress-check-mark](https://badges.gitter.im/vic10us/progress-check-mark.svg)](https://gitter.im/vic10us/progress-check-mark?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
 
 # A Polymer Progress with Check Mark
 *_a circular progress with green check mark on success state change_*
 
-Demo and API docs: _https://vic10us.github.io/cc-form/components/progress-check-mark/_
+Demo and API docs: _https://vic10us.github.io/progress-check-mark/components/progress-check-mark/_
 
 ## Dependencies
 
